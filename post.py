@@ -13,19 +13,19 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 """
 
 import cv2
-from networktables import NetworkTablesInstance
+from networktables import NetworkTables
 from grip import GripPipeline
 import numpy as np
 import operator
 
 def init():
     print('Initializing NetworkTables')
-    NetworkTablesInstance.setServer(server_or_servers='192.168.1.102')
-    NetworkTablesInstance.startClient()
+    NetworkTables.startClient(server_or_servers='192.168.1.102')
+    #NetworkTables.startClient()
 
 
 def process(frame, pipeline):
-    table = NetworkTablesInstance.getTable('/SmartDashboard')
+    table = NetworkTables.getTable('/SmartDashboard')
     table.putNumber('imgWidth', frame.shape[1])
     table.putNumber('imgHeight', frame.shape[0])
     cv2.imshow("original", frame)
