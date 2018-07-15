@@ -13,7 +13,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 """
 
 import cv2
-from networktables import networktables
+from networktables import NetworkTable
 from grip import GripPipeline
 import numpy as np
 import operator
