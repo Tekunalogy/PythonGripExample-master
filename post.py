@@ -21,7 +21,6 @@ import operator
 def init():
     print('Initializing NetworkTables')
     NetworkTables.startClient(server_or_servers='192.168.1.102')
-    #NetworkTables.startClient()
 
 
 def process(frame, pipeline):
